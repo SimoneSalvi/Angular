@@ -1,0 +1,31 @@
+<div class="fundo">
+  <br>
+  <div class="entrar">
+
+    <div class="mb-3 row">
+      <label for="staticEmail" class="col-sm-2 col-form-label"><b>Email</b></label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="email" name="email" type="email" class="form-control" id="staticEmail" value="">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="inputPassword" class="col-sm-2 col-form-label"><b>Senha</b></label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="senha" type="password" class="form-control" id="inputPassword">
+      </div>
+    </div>
+
+
+    <button (click)="fazerLogin()" class="btn text-black"
+      style="margin-right: 5%; margin-left: 30%; border-radius: 5px; background-color: rgb(253, 255, 154);">Entrar</button>
+    <button (click)="liberarCadastro()" class="btn text-black"
+      style="border-radius: 5px; background-color: rgb(253, 255, 154);">Fazer cadastro</button>
+
+    <!--<app-cadastro *ngIf="mostrarCadastro"></app-cadastro>
+    <button *ngIf="mostrarCadastro" (click)="esconderCadastro()" class="btn text-black"
+      style="border-radius: 5px; background-color: rgb(253, 255, 154);">Cancelar</button>-->
+
+  </div>
+  <br>
+
+</div>

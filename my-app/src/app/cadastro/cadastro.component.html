@@ -1,0 +1,60 @@
+<div class="fundo">
+    <div *ngIf="false">
+        <b>Você já tem cadastro</b>
+    </div>
+    <div *ngIf="true">
+        <div>
+            <b style="color: azure;margin-left: 30%; font-size: 150%;">Formulario para realizar seu cadastro</b>
+         </div>
+
+        <div class="divCad">
+            <form [formGroup]="formCadastro" #form="ngForm">
+
+                <div class="mb-3 row">
+                    <label for="inputPassword" style="color: azure;" class="col-sm-2 col-form-label"><b>Nome:</b></label>
+                    <div class="col-sm-10">
+                        <input formControlName="nome" type="text" class="form-control" id="inputPassword">
+                        <small *ngIf="formCadastro.get('nome')?.invalid" class="text-danger"> Nome é obrigatorio
+                        </small>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="staticEmail" style="color: azure;" class="col-sm-2 col-form-label"><b>Email:</b></label>
+                    <div class="col-sm-10">
+                        <input formControlName="email" type="text" class="form-control" id="staticEmail" value="">
+                        <small *ngIf="formCadastro.get('email')?.invalid" class="text-danger"> Email é obrigatorio
+                        </small>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" style="color: azure;" class="col-sm-2 col-form-label"><b>Data de nascimento:</b></label>
+                    <div class="col-sm-10">
+                        <input formControlName="data" type="date" class="form-control" id="inputPassword">
+                        <small *ngIf="formCadastro.get('senha')?.invalid" class="text-danger"> Coloque uma data válida
+                        </small>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="inputPassword" style="color: azure;" class="col-sm-2 col-form-label"><b>Senha:</b></label>
+                    <div class="col-sm-10">
+                        <input type="password" formControlName="senha" class="form-control" id="inputPassword"
+                            maxlength="8">
+                    </div>
+                </div>
+
+                <div *ngIf="adm" class="mb-3 row">
+                    <label for="inputPassword" style="color: azure;" class="col-sm-2 col-form-label"><b>Senha:</b></label>
+                    <div class="col-sm-10">
+                        <input type="password" formControlName="senha" class="form-control" id="inputPassword"
+                            maxlength="8">
+                    </div>
+                </div>
+
+                <button (click)="cadastratar()" class="btn text-black " style="border-radius: 5px; background-color: rgb(253, 255, 154);margin-left: 34%;">Cadastrar</button>
+                <button (click)="voltarLogin()" class="btn text-black" style="border-radius: 5px; background-color: rgb(253, 255, 154);margin-left: 34%;">Cancelar</button>
+            </form>
+        </div>
+    </div>
+    <br>
+
+</div>

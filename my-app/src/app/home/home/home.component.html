@@ -1,0 +1,35 @@
+
+
+<div class="compraMoedas" >
+    <br>
+    <!--Converter do real-->
+    <div class="compraMoedas2" >
+        <h1 >***Compra de moedas***</h1>
+        <br>
+        <br>
+        <h4>Digite a quantidade que você quer comprar: </h4>
+        <input [(ngModel)]="reais" name="reais" class="form-control" id="reais" value="">
+
+
+        <h4>Selecione a moeda para a qual você deseja converter:</h4>
+        <select name="md2" [(ngModel)]="md2" class="form-select" aria-label="Default selact example">
+            <option [ngValue]="null" selected>Selecione a moeda para a qual você deseja converter</option>
+            <option *ngFor="let item of listaDeMoedas" [ngValue]="item.high">
+                {{item.code}}>{{item.name}}>Valor={{item.high}}</option>
+        </select>
+
+        <button (click)="converterDoReal()"
+            style="border-radius: 5px; background-color: rgb(195, 238, 195); margin-left: 40%; margin-top: 5%;">Calcular</button>
+        
+            <br>
+        <h4>Valor a ser gasto: </h4>
+        <input [(ngModel)]="resultadoReais" name="resultadoReais" class="form-control" id="resultadoReais"
+            value="">
+
+            <button (click)="logout()"
+            style="border-radius: 5px; background-color: rgb(195, 238, 195); margin-left: 40%; margin-top: 5%;">Logout</button>
+
+
+    </div>
+<br>
+</div>
